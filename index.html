@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'">
+    <title>Molecule Viewer</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/modal.css">
+    <!-- JavaScript Libraries -->
+    <!-- CSS only -->
+    <!-- External -->
+    <!-- JavaScript Controller Files -->
+    <script src="./src/app/modal.js"></script>
+
+    <script src="./src/app/Themes.js"></script>
+    <script src="./src/app/Material.js"></script>
+    <script src="./src/app/Primatives.js"></script>
+    <script src="./src/app/Actor.js"></script>
+    <script src="./src/app/A_Atom.js"></script>
+    <script src="./src/app/A_Molecule.js"></script>
+    <script src="./src/app/ActorCollection.js"></script>
+    <script src="./src/app/BasicShader.js"></script>
+    <script src="./src/app/UserInterface.js"></script>
+    <script src="./src/app/Camera.js"></script>
+    <script src="./src/app/Engine.js"></script>
+
+
+</head>
+
+<body>
+
+    <canvas id="mv-canvas"></canvas>
+    <div id="button-header">
+        <a id="btn-load-sdf" class="link-button" value="load-sdf" onclick="document.getElementById('file-sdf').click();">Load SDF</a>
+        <a id="btn-about" class="link-button" data-open="modal-about">About</a>
+    </div>
+    <br>
+    <textarea id="txt-sdf" name="sdf" rows="20" cols="111"></textarea>
+    <br>
+    <button id="btn-parseSDF">Parse SDF</button>
+
+
+    <input type="file" style="display:none;" id="file-sdf" name="file-sdf" />
+
+    <div class="modal" id="modal-about">
+        <div class="modal-dialog">
+            <header class="modal-header">
+                About
+                <button class="close-modal" aria-label="close modal" data-close>✕</button>
+            </header>
+            <section class="modal-content">
+                <p>
+                    This is just a simple molecule viewer. From the perspective of a molecule viewer
+                    it really isn't anything special, but what it represents is exciting. It
+                    represents my first foray into 3d graphics (utilizing vanilla WebGL). It also
+                    happens to be the start of my journey into computational chemistry. By effectively
+                    building a game engine to run the visualization of my future computational
+                    chemistry projects, I hope to gain a better understanding of what I'm working on
+                    and create an opportunity to share my projects as an added bonus.
+                </p>
+                <p>
+                    Eventually this will be a computational chemistry simulation running in the
+                    browser. In order to attempt to keep performance at an acceptable level the
+                    simlutation backend will be written in C++ compiled to Web Assembley. This gives
+                    the added bonus of being reusable for native desktop and server use as well.
+                </p>
+                <p>
+                    In short, this project represents a home base for a multitude of future projects
+                    that greatly interest me. Expect to see this page evolve quite a bit over time.
+                </p>
+            </section>
+            <footer class="modal-footer"></footer>
+        </div>
+    </div>
+
+    <script>
+        window.onload = () => {
+            createModal();
+            var main = new Engine('mv-canvas');
+        };
+    </script>
+
+</body>
+
+</html>

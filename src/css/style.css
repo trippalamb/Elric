@@ -1,0 +1,46 @@
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    margin:0px;
+    padding:0px;
+}
+
+#mv-canvas{
+    margin: 0px;
+    padding: 0px;
+    height:100%;
+    width:100%;
+}
+
+#button-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.link-button {
+    font-family: "Consolas", "Lucida Console";
+    font-size: 1.5em;
+    margin: 10px;
+    padding: 10px;
+    border: solid;
+    border-width: 3px;
+    border-color: #b58900;
+    text-decoration: none;
+    color: #b58900;
+    transition: 0.4s;
+    
+    font-size: 2em;
+    background-color: Transparent;
+    cursor:pointer;
+}
+
+.link-button:hover {
+    background-color: #b58900;
+    color: #002b36;
+}
